@@ -1,0 +1,9 @@
+{
+    "include": ["*/*/source.ts"],
+    "compilerOptions": {
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "target": "ESNext",
+        "module": "ESNext"
+    }
+}
