@@ -9,21 +9,21 @@ const updates = updatesText.split('\n').map((u) => u.split(',').map(Number));
 
 let total = 0;
 for (const update of updates) {
-	const relevantRules = rules //
-  .filter((r) => r.every((n) => update.includes(n)));
+  const relevantRules = rules //
+    .filter((r) => r.every((n) => update.includes(n)));
 
-	let valid = true;
-	for (const rule of relevantRules) {
-		const [before, after] = rule;
-		const beforeIndex = update.indexOf(before);
-		const afterIndex = update.indexOf(after);
-		if (beforeIndex > afterIndex) valid = false;
-	}
+  let valid = true;
+  for (const rule of relevantRules) {
+    const [before, after] = rule;
+    const beforeIndex = update.indexOf(before);
+    const afterIndex = update.indexOf(after);
+    if (beforeIndex > afterIndex) valid = false;
+  }
 
-	if (valid) {
-		const middleIndex = Math.floor(update.length / 2);
-		total += update[middleIndex];
-	}
+  if (valid) {
+    const middleIndex = Math.floor(update.length / 2);
+    total += update[middleIndex];
+  }
 }
 
 const result = total;
